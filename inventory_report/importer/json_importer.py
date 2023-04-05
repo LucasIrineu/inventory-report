@@ -10,10 +10,9 @@ class JsonImporter(Importer):
 
         if file_extension == '.json':
             with open(path, encoding="utf-8") as file:
-                if file_extension == ".csv":
+                if file_extension == ".json":
                     file_reader = json.load(file)
-                    result = [row for row in file_reader]
-                    return result
+                    return file_reader
 
         else:
-            ValueError('Arquivo inválido')
+            raise ValueError('Arquivo inválido')

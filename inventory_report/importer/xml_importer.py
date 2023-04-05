@@ -3,7 +3,7 @@ import xmltodict
 import os
 
 
-class xmlImporter(Importer):
+class XmlImporter(Importer):
     @staticmethod
     def import_data(path: str):
         file_extension = os.path.splitext(path)[1]
@@ -14,4 +14,4 @@ class xmlImporter(Importer):
                 result = file_reader["dataset"]["record"]
             return result
         else:
-            ValueError("Arquivo inválido")
+            raise ValueError("Arquivo inválido")

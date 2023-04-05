@@ -16,4 +16,4 @@ class CsvImporter(Importer):
                     return result
 
         else:
-            ValueError('Arquivo inválido')
+            raise ValueError('Arquivo inválido')

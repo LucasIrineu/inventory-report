@@ -1,7 +1,8 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 
 class Importer(ABC):
     @staticmethod
+    @abstractmethod
     def import_data():
         pass
