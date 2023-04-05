@@ -17,7 +17,7 @@ def read(path: str):
             file_reader = json.load(file)
             result = [row for row in file_reader]
             return result
-        if file_extension == '.xml':
+        elif file_extension == '.xml':
             file_reader = xmltodict.parse(file.read())
             result = file_reader['dataset']['record']
             return result
