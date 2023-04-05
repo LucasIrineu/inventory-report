@@ -37,3 +37,21 @@ def most_products_report(companies: List[Dict]):
             company_with_most_products = company
 
     return company_with_most_products
+
+
+def sort_companies_stock(companies_list: List[Dict]):
+    sorted_stock = []
+    result_string = ""
+    companies = sorted(
+        companies_list, key=lambda x: x["products_count"], reverse=True
+    )
+
+    for company in companies:
+        sorted_stock.append(
+            f"- {company['name']}: {company['products_count']}\n"
+        )
+
+    for str in sorted_stock:
+        result_string += str
+
+    return result_string
